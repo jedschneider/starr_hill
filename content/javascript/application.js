@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  // console.log("got here");
+  $("#accordion").accordion({autoHeight:false});
 });
 
 // $("#accordion").accordion();
