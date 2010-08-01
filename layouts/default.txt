@@ -10,6 +10,8 @@ filter:    erb
    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
    <title><%= @page.title %></title>
    <meta name="author" content="<%= @page.author %>" />
+   
+   
 
    <!--- Blueprint CSS Framework -->
    <link rel="stylesheet" href="/css/blueprint/screen.css" type="text/css" media="screen, projection">
@@ -26,40 +28,42 @@ filter:    erb
    <script src="/javascript/jquery.js" type="text/javascript" charset="utf-8"></script>
    <script src="javascript/jquery-ui-1.8.2.custom.min.js" type="text/javascript" charset="utf-8"></script>
    <script src="javascript/application.js" type="text/javascript" charset="utf-8"></script>
+   
+   
+   
+
+
+
 </head>
 <body>
 
-<div class="container">
+<div id="nav">
+        <ul>
+          <li><a href="about.txt">About.txt</a></li>
+          <li><a href="page01">page one</a></li>
+          <li><a href="page01">page one</a></li>
+          <li><a href="page01">page one</a></li>
 
-   <div class="column span-20 prepend-2 append-2 first last" id="header">
-     <p class="title">A New Website</p>
-     <hr>
-   </div>
+        </ul>
+      </div>  
+      
 
-   <div class="column span-15 prepend-2 first">
+
+   <div class="column span-12 prepend-20 first">
       <%= @content %>
    </div>
 
-   <div class="column span-5 append-2 last">
-      <h4>Sidebar</h4>
-      <p>Jed and William rule the world!!! </p>
-      <%- @pages.find(:all, :in_directory => "/will").each do |page| %>
-        <p><%= link_to page.title, page  %></p>
-      <%end%>
-      <div class="box">
-         <p class="last">Mauris a lectus. Aliquam erat volutpat. Phasellus ultrices mi a sapien. Nunc rutrum egestas lorem. Duis ac sem sagittis elit tincidunt gravida.</p>
-      </div>
-
-      <p class="quiet">Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Cras ornare mattis nunc. Mauris venenatis, pede sed aliquet vehicula, lectus tellus pulvinar neque, non cursus sem nisi vel augue.</p>
-
-      <h5>Incremental leading</h5>
-      <p class="incr">Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Cras ornare mattis nunc. Mauris venenatis, pede sed aliquet vehicula, lectus tellus pulvinar neque, non cursus sem nisi vel augue. sed aliquet vehicula, lectus tellus.</p>
    </div>
+   
+<p><IMG STYLE="position:fixed; BOTTOM:31px; LEFT:31px;" img src='images/grafik-main-white.sm.png'/></a></p>
 
-   <div class="column span-20 prepend-2 append-2 first last" id="footer">
-     <hr />
-     <p>This website was created with <a href="http://webby.rubyforge.org">Webby</a></p>
-   </div>
+
+   
+   
+
+   
+   
+
 
 </div>
 </body>
