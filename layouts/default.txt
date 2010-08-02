@@ -29,6 +29,51 @@ filter:    erb
    <script src="javascript/jquery-ui-1.8.2.custom.min.js" type="text/javascript" charset="utf-8"></script>
    <script src="javascript/application.js" type="text/javascript" charset="utf-8"></script>
    
+   <script type="text/javascript">
+(function($) {
+	$.fn.fullBg = function(){
+		var bgImg = $(this);
+		
+		bgImg.addClass('fullBg');
+		
+		function resizeImg() {
+			var imgwidth = bgImg.width();
+			var imgheight = bgImg.height();
+			
+			var winwidth = $(window).width();
+			var winheight = $(window).height();
+			
+			var widthratio = winwidth / imgwidth;
+			var heightratio = winheight / imgheight;
+			
+			var widthdiff = heightratio * imgwidth;
+			var heightdiff = widthratio * imgheight;
+		
+			if(heightdiff>winheight) {
+				bgImg.css({
+					width: winwidth+'px',
+					height: heightdiff+'px'
+				});
+			} else {
+				bgImg.css({
+					width: widthdiff+'px',
+					height: winheight+'px'
+				});		
+			}
+		} 
+		resizeImg();
+		$(window).resize(function() {
+			resizeImg();
+		}); 
+	};
+})(jQuery)
+
+jQuery(function($) {
+	$("#background").fullBg();
+});
+</script>
+
+   
    
    
 
@@ -36,6 +81,8 @@ filter:    erb
 
 </head>
 <body>
+
+
 
 <div id="nav">
         <ul>
@@ -56,6 +103,8 @@ filter:    erb
    </div>
    
 <p><IMG STYLE="position:fixed; BOTTOM:31px; LEFT:31px;" img src='images/grafik-main-white.sm.png'/></a></p>
+
+
 
 
    

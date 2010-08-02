@@ -1,3 +1,21 @@
+/* Background
+ * --------------------------------------------------------------------- */
+
+.fullBg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  width: 100%;
+}
+ 
+#maincontent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 50;
+}
+
 
 body {
   font-family: Verdana, "Bitstream Vera Sans", sans-serif;
